@@ -1,3 +1,105 @@
 .offer {
-    height: 800px;
+    height: 600px;
+    padding-top: 35px;
+    @include flex($direction: column, $alignI: center, $justify: center);
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    &--tall {
+        height: 100%;
+        min-height: 600px;
+        max-height: 1080px;
+    }
+    p {
+        color: #FFF;
+        font: 20px $r;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+    &__slider {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        .slick-list,
+        .slick-track {
+            height: 100%;
+        }
+        &__slide {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            .wrapper {
+                height: 100%;
+                @include flex($direction: column, $alignI: flex-start, $justify: center);
+            }
+            &__info {
+                width: 530px;
+                max-width: 100%;
+                text-align: left;
+                .button {
+                    margin-top: 30px;
+                }
+            }
+            h1 {
+                color: $blued;
+            }
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                height: 80px;
+                left: 0;
+                width: 100%;
+                pointer-events: none;
+                -webkit-box-shadow: inset 0px -40px 48px 0px white;
+                box-shadow: inset 0px -40px 48px 0px white;
+            }
+        }
+    }
+}
+
+.slick-arrow {
+    width: 85px;
+    height: 52px;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+         -o-background-size: 100% 100%;
+            background-size: 100% 100%;
+    z-index: 20;
+    &:before {
+        display: none;
+    }
+    &:hover {
+        opacity: .8;
+    }
+    @media (max-width: 1500px) {
+        width: 53px;
+        height: 32px;
+    }
+}
+.slick-prev,
+.slick-prev:hover,
+.slick-prev:focus {
+    background-image: url("../images/prev.png") !important;
+    background-repeat: no-repeat !important;
+    left: 20px;
+    -webkit-background-size: 100% 100%!important;
+         -o-background-size: 100% 100%!important;
+            background-size: 100% 100%!important;
+    @media (max-width: 1500px) {
+        left: 10px;
+    }
+}
+.slick-next {
+    background-image: url("../images/next.png") !important;
+    background-repeat: no-repeat !important;
+    right: 20px;
+        -webkit-background-size: 100% 100%!important;
+         -o-background-size: 100% 100%!important;
+            background-size: 100% 100%!important;
+    @media (max-width: 1500px) {
+        right: 10px;
+    }
 }

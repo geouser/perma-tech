@@ -4,16 +4,22 @@
 html,
 body {
 	height: 100%;
+    font: 15px $os;
+    color: #001626;
 }
 body {
     
 }
-
+.page-title {
+    font: 62px $r;
+    font-weight: 700;
+    color: #FFF;
+}
 
 // lAYOUT
 // ---------------------------
 .wrapper {
-	width: 1200px;
+	width: 1160px;
 	margin: 0 auto;
 	text-align: center;
 }

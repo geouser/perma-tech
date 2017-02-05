@@ -1,26 +1,222 @@
          
 .mainHeader {
-    @include position(absolute, 0, auto, auto, 0);
+    @include position(absolute, 0, 0, auto, 0);
     @include transition(all, .4s);
-    
-        /*.................media.............*/
-        @include m800 {
-            @include position(fixed, 0, auto, auto, -100%);
+    z-index: 100;
+    .wrapper {
+        @include flex();
+        padding-top: 8px;
+        position: relative;
+    }
+    &__top {
+        background-color: rgba(255,255,255,.5);
+        padding: 0 20px 2px;
+        @include flex();
+        height: 35px;
+    }
+    .contact-compact {
+        display: none;
+        width: 120px;
+        text-align: justify;
+        top: 50px;
+        position: absolute;
+        right: -180px;
+        @media (max-width: 1570px) {
+            position: static;
         }
-        /*.............end media..............*/
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 14px;
+            text-align: center;
+            &:nth-child(2) {
+                margin: 0 30px;
+            }
+            i {
+                color: $blue;
+                display: inline-block;
+                vertical-align: middle;
+                width: 14px;
+                @include transition(all, .2s);
+            }
+            &:hover {
+                i {
+                    color: $blued;
+                }
+            }
+        }
+        button {
+            width: 100%;
+            border: none;
+            margin-top: 18px;
+            height: 30px;
+            display: block;
+            background-color: #c9cfd4;
+            text-align: center;
+            color: #FFF;
+            box-shadow: 0px 1px 0px 0px rgba(0, 22, 38, 0.2);
+            text-transform: uppercase;
+            font: 13px/30px $os;
+            cursor: pointer;
+            -webkit-border-radius: 20px;
+                    border-radius: 20px;
+            @include transition(all, .2s);
+            &:hover {
+                background-color: $grey;
+            }
+            i {
+                margin-right: 9px;
+            }
+        }
+    }
+    &--compact {
+        .mainHeader__top {
+            display: none;
+        }
+        .contact-compact {
+            display: block;
+        }
+    }
 }
 
+.tel,
+.mail {
+    font: 13px;
+    color: #6D7277;
+    margin-right: 18px;
+    i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+        color: $blue;
+        @include transition(all, .2s);
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 1px;
+        height: 20px;
+        background-color: #001626;
+        opacity: .1;
+        margin-left: 18px;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    &:last-child:after {
+        display: none;
+    }
+    &:hover {
+        i {
+            color: $blued;
+        }
+    }
+}
 
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .mainNav {
-            /*.................media.............*/
-            @include m800 { 
+    ul {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            a {
+                display: inline-block;
+                font: 13px/32px $os;
+                color: #FFF;
+                text-transform: uppercase;
+                text-shadow: 0px 1px 0px rgba(0, 22, 38, 0.3);
+                position: relative;
+                margin: 0 40px 0 0;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    max-width: 0;
+                    height: 1px;
+                    background-color: #FFF;
+                    @include transition(all, .2s);
+                    box-shadow: 0px 1px 0px 0px rgba(0, 22, 38, 0.2);
+                }
+                &:hover:after,
+                &:active:after {
+                    max-width: 100%;
+                }
+                @media (max-width: 1500px) {
+                    margin: 0 0 0 30px;
+                }
             }
-            /*.............end media.............*/
+            .sub {
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:last-of-type a {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
+.mainHeader--compact {
+    .mainNav {
+        ul {
+            li {
+                a {
+                    color: $blued;
+                    &:after {
+                        background-color: $blued;
+                    }
+                }
+            }
+        }
+    }
+}
 
+.social {
+    a {
+        color: $blue;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        margin-right: 16px;
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            width: 14px;
+            @include transition(all, .2s);
+        }
+        &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 1px;
+            height: 20px;
+            background-color: #001626;
+            opacity: .1;
+            margin-left: 16px;
+        }
+        &:last-child:after {
+            display: none;
+        }
+        &:hover {
+            i {
+                color: $blued;
+            }
+        }
+    }
+}
 
 
 /* ------------------------------------ */

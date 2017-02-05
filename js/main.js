@@ -108,7 +108,9 @@ jQuery(document).ready(function($) {
     });
 
 
-
+    $('.offer__slider').slick({
+        arrows: true
+    });
     /*----------------------------
                               SEND FORM
     -------------------------*/
