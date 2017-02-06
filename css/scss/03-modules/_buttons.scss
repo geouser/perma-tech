@@ -18,3 +18,16 @@
         background-color: $blued;
     }
 }
+
+
+.read-more {
+    color: $green;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    i {
+        margin-left: 10px;
+        font-weight: 100;
+        font-style: normal;
+    }
+}

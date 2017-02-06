@@ -1,0 +1,35 @@
+.infoBlock {
+    @include flex($alignI: flex-start);
+    padding: 25px;
+    background-color: #FFF;
+    box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.2);
+    &__img {
+        width: 36%;
+        background-position: 50% 50%;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+        &:after {
+            display: block;
+            content: "";
+            padding-top: 113%;
+        }
+    }
+    &__info {
+        width: 64%;
+        padding-left: 40px;
+        text-align: left;
+        padding-top: 3%;
+        h2 {
+            margin-left: -2px;
+        }
+        span {
+            display: block;
+            font: 22px $r;
+        }
+        .read-more {
+            margin-top: 35px;
+            display: block;
+        }
+    }
+}

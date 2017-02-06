@@ -11,10 +11,18 @@ body {
     font-family: $os;
     color: $text;
 }
+p {
+    font-size: 16px;
+    line-height: 30px;
+}
 .page-title {
     font: 62px $r;
     font-weight: 700;
     color: #FFF;
+}
+.section-title {
+    font: 700 56px $r;
+    margin-bottom: 45px;
 }
 
 // lAYOUT
@@ -23,4 +31,7 @@ body {
 	width: 1160px;
 	margin: 0 auto;
 	text-align: center;
+}
+.section {
+    padding: 60px 0;
 }
