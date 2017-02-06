@@ -1,0 +1,50 @@
+.services {
+    @include flex($alignI: flex-start);
+    &__service {
+        width: 32%;
+        i {
+            width: 100%;
+            display: block;
+            margin-bottom: 40px;
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+                 -o-background-size: cover;
+                    background-size: cover;
+            &:after {
+                content: "";
+                display: block;
+                padding-top: 59%;
+            }
+        }
+        h3 {
+            color: $blue;
+            font: 500 20px/30px $r;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 25px;
+        }
+        ul {
+            list-style-type: none;
+            li {
+                font-size: 15px;
+                line-height: 25px;
+                margin-bottom: 10px;
+                &:before {
+                    content: "";
+                    width: 14px;
+                    margin-right: 5px;
+                    height: 2px;
+                    background-color: #aaadb0;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .button {
+            margin-top: 25px;
+        }
+    }
+}

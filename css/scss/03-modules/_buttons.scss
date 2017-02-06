@@ -17,6 +17,20 @@
     &:hover {
         background-color: $blued;
     }
+    &--medium {
+        height: 45px;
+        line-height: 43px;
+    }
+    &--transparent {
+        background-color: transparent;
+        border: 1px solid $blue;
+        color: $blue;
+        font-size: 13px;
+        &:hover {
+            background-color: $blue;
+            color: #FFF;
+        }
+    }
 }
 
 
