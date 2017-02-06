@@ -31,6 +31,16 @@
             color: #FFF;
         }
     }
+    &--white--transparent {
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 13px;
+        &:hover {
+            background-color: #fff;
+            color: $blued;
+        }
+    }
     &--white {
         background-color: #FFF;
         border: none;
@@ -52,5 +62,34 @@
         margin-left: 10px;
         font-weight: 100;
         font-style: normal;
+    }
+}
+
+.breadcrumbs {
+    list-style-type: none;
+    text-align: left;
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        a {
+            text-transform: uppercase;
+            color: $blue;
+            font: 500 14px $r;
+            &:after {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                content: "/";
+                margin: 0 5px 0 7px;
+            }
+        }
+        &:last-of-type {
+            a {
+                color: $grey;
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
 }

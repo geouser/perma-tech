@@ -1,0 +1,104 @@
+.products-view {
+    @include flex($alignI: flex-start);
+    margin-top: 40px;
+}
+.products-filters {
+    width: 25%;
+    padding-right: 60px;
+    text-align: left;
+    list-style-type: none;
+    li {
+        display: block;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        position: relative;
+        a {
+            font: 14px/20px $os;
+            color: $blue;
+            position: relative;
+        }
+        &:before {
+            content: "\f1db";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font: 13px "FontAwesome";
+            color: $blue;
+        }
+        &.active:before,
+        &:hover:before {
+            content: "\f192";
+            color: $blued;
+        }
+    }
+}
+.products-list {
+    width: 75%;
+    @include flex($alignI: flex-start, $justify: flex-start);
+}
+.product {
+    width: 31%;
+    margin-bottom: 40px;
+    margin-right: 3%;
+    &:nth-of-type(3n + 3) {
+        margin-right: 0;
+    }
+    &__effigy {
+        border: 1px solid #E2E3E4;
+        text-align: center;
+        position: relative;
+        height: 270px;
+        margin-bottom: 12px;
+        img {
+            max-width: 97%;
+            max-height: 90%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:before {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            content: '';
+        }
+        &__more {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0,114,188,.85);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all .2s;
+               -moz-transition: all .2s;
+                -ms-transition: all .2s;
+                 -o-transition: all .2s;
+                    transition: all .2s;
+            .button {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+                content: '';
+            }
+        }
+    }
+    &__info {
+        padding-left: 10px;
+        text-align: left;
+        span {
+            font: 500 16px/20px $r;
+            color: $blue;
+        }
+    }
+    &:hover .product__effigy__more {
+        opacity: 1;
+        visibility: visible;
+    }
+}

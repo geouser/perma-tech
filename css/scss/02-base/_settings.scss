@@ -19,6 +19,9 @@ p {
     font: 62px $r;
     font-weight: 700;
     color: #FFF;
+    &--dark {
+        color: $blued;
+    }
 }
 .section-title {
     font: 700 56px $r;
