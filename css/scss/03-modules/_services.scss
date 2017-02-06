@@ -129,3 +129,64 @@
         margin: 25px auto 0;
     }
 }
+
+
+.aboutInfo {
+    @include flex($alignI: stretch);
+    &__item {
+        width: 25%;
+        padding: 27px 25px 35px;
+        text-align: left;
+        @include transition(all, .2s);
+        background-position: 50% 50%;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+        .title {
+            display: block;
+            margin: 0 auto 22px;
+            text-align: center;
+            color: #FFF;
+            font: 500 20px $r;
+        }
+        i {
+            display: block;
+            margin: 0 auto 20px;
+            width: 95px;
+            height: 90px;
+            background-image: url("../images/about-icons.png");
+            background-position: 0 0;
+        }
+        p {
+            font: 16px/25px $os;
+            color: rgba(255,255,255,.8);
+        }
+        &:nth-of-type(1) {
+            background-image: url("../images/about-1.jpg");
+        }
+        &:nth-of-type(2) {
+            background-image: url("../images/about-2.jpg");
+        }
+        &:nth-of-type(3) {
+            background-image: url("../images/about-3.jpg");
+        }
+        &:nth-of-type(4) {
+            background-image: url("../images/about-4.jpg");
+        }
+        &:nth-of-type(1) i {
+            background-position: 0 0;
+        }
+        &:nth-of-type(2) i {
+            background-position: -109px 0;
+        }
+        &:nth-of-type(3) i {
+            background-position: -218px 0;
+        }
+        &:nth-of-type(4) i {
+            background-position: -352px 0;
+        }
+        &:hover {
+            background-position: 0 0;
+        }
+    }
+}
