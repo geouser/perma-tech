@@ -48,3 +48,32 @@
         }
     }
 }
+
+.banners {
+    @include flex($alignI: flex-start);
+}
+.banner {
+    width: 48%;
+    padding: 25px 30px;
+    text-align: left;
+    background-position: right bottom;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    &__info {
+        min-height: 200px;
+    }
+    p {
+        color: #FFF;
+        font: 700 56px $r;
+        min-height: 110px;
+    }
+    .button {
+        margin-top: 25px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        padding-top: 29%;
+    }
+}

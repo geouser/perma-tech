@@ -31,6 +31,15 @@
             color: #FFF;
         }
     }
+    &--white {
+        background-color: #FFF;
+        border: none;
+        color: $text;
+        &:hover {
+            background-color: $blued;
+            color: #FFF;
+        }
+    }
 }
 
 
