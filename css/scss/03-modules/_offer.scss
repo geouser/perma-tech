@@ -11,6 +11,11 @@
         min-height: 600px;
         max-height: 1080px;
     }
+    &--left {
+        .wrapper {
+            text-align: left;
+        }
+    }
     p {
         color: #FFF;
         font: 20px $r;
