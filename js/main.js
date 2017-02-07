@@ -108,9 +108,68 @@ jQuery(document).ready(function($) {
     });
 
 
+    /*----------------------------
+                              Sliders
+    -------------------------*/
+    // offer
     $('.offer__slider').slick({
         arrows: true
     });
+
+    // post
+    $('.post-slider').on('init', function(event, slick, direction){
+        $(this).append('<div class="progress"><span class="current-position">1</span>/<span class="total">'+slick.slideCount+'</span></div>')
+
+        $(this).magnificPopup({
+            delegate: '.gallery-item',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            }
+        });
+
+        $(this).css({
+            opacity: '1',
+            visibility: 'visible'
+        });
+    });
+
+    $('.post-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+      $('.current-position').text(currentSlide+1);
+    });
+
+    $('.post-slider').slick({
+        arrows: true
+    })
+
+    //news-slider
+    $('.news-slider').slick({
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    })
+
+    $('.slider-prev').on('click', function(event) {
+        event.preventDefault();
+        $('.news-slider').slick('slickPrev');
+    });
+
+    $('.slider-next').on('click', function(event) {
+        event.preventDefault();
+        $('.news-slider').slick('slickNext');
+    });
+
+
+
     /*----------------------------
                               SEND FORM
     -------------------------*/
@@ -174,25 +233,12 @@ jQuery(document).ready(function($) {
 
     /*Google map init*/
     var map;
-    function googleMap_initialize() {
-        var lat = $('#map_canvas').data('lat');
-        var long = $('#map_canvas').data('lng');
+    function googleMap_initialize(container) {
+        var lat = container.data('lat');
+        var long = container.data('lng');
 
-        var mapCenterCoord = new google.maps.LatLng(lat, long+0.002);
+        var mapCenterCoord = new google.maps.LatLng(lat, long);
         var mapMarkerCoord = new google.maps.LatLng(lat, long);
-        if ( $(window).width() <= 1000 ) {
-            mapCenterCoord = new google.maps.LatLng(lat, long);
-            mapMarkerCoord = new google.maps.LatLng(lat, long);
-        }
-        $(window).resize(function(event) {
-            if ( $(window).width() <= 1000 ) {
-                mapCenterCoord = new google.maps.LatLng(lat, long);
-                mapMarkerCoord = new google.maps.LatLng(lat, long);
-            } else {
-                mapCenterCoord = new google.maps.LatLng(lat, long+0.002);
-                mapMarkerCoord = new google.maps.LatLng(lat, long);
-            }
-        });
 
         var mapOptions = {
             center: mapCenterCoord,
@@ -203,13 +249,13 @@ jQuery(document).ready(function($) {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
-        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        map = new google.maps.Map(container[0], mapOptions);
         var markerImage = new google.maps.MarkerImage('images/location.png');
         var marker = new google.maps.Marker({
             icon: markerImage,
             position: mapMarkerCoord, 
             map: map,
-            title:"Чисто Строй"
+            title:"PermaTech"
         });
         
         $(window).resize(function (){
@@ -217,8 +263,11 @@ jQuery(document).ready(function($) {
         });
     }
 
-    if ( exist( '#map_canvas' ) ) {
-        googleMap_initialize();
+    if ( exist( '.map_canvas' ) ) {
+        $('.map_canvas').each(function(index, el) {
+            googleMap_initialize($(this));
+        });
+        
     }
 
 }); // end file
