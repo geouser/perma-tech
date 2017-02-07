@@ -157,54 +157,66 @@
         font-family: $r;
         margin-bottom: 45px;
     }
+}
 
-    .slider-controls {
-        button {
-            display: inline-block;
-            vertical-align: middle;
+.navigation-controls {
+    button {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .button {
+        border-color: #7E7F80;
+        color: #7E7F80;
+        height: 34px;
+        line-height: 32px;
+
+        &:hover {
+            background-color: #7E7F80;
+            color: #fff;
         }
-        .button {
-            border-color: #7E7F80;
-            color: #7E7F80;
-            height: 34px;
-            line-height: 32px;
+    }
 
-            &:hover {
-                background-color: #7E7F80;
-                color: #fff;
-            }
+    .navigation-button {
+        width: 75px;
+        height: 34px;
+        display: inline-block;
+        vertical-align: middle;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        -webkit-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
         }
 
-        .slider-button {
-            width: 75px;
-            height: 34px;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            -webkit-filter: grayscale(100%);
-            -o-filter: grayscale(100%);
-            filter: grayscale(100%);
-            background-color: transparent;
-            border: 0;
-            cursor: pointer;
-            -webkit-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease;
+        &:hover {
+            -webkit-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+        }
 
-            &:hover {
-                -webkit-filter: grayscale(0);
-                -o-filter: grayscale(0);
-                filter: grayscale(0);
-            }
+        &.slider-prev,
+        &.page-prev {
+            background-image: url(../images/prev.svg);
+        }
 
-            &.slider-prev {
-                background-image: url(../images/prev.svg);
-            }
-            &.slider-next {
-                background-image: url(../images/next.svg);
-            }
+        &.slider-next,
+        &.page-next {
+            background-image: url(../images/next.svg);
         }
     }
 }
+
 
 .news-slider {
     margin: 0 -15px 60px;

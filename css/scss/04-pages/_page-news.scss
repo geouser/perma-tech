@@ -1,0 +1,13 @@
+.news-grid {
+    margin-bottom: -70px;
+    margin-top: 55px;
+
+    .news {
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    & + .navigation-controls {
+        margin-top: 70px;
+    }
+}
