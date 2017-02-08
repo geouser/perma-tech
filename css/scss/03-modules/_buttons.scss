@@ -53,6 +53,25 @@
             color: #FFF;
         }
     }
+
+
+
+    .fa {
+        display: none;
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:disabled {
+        opacity: 0.5;
+
+        .fa {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    }
 }
 
 

@@ -155,7 +155,22 @@ jQuery(document).ready(function($) {
     $('.news-slider').slick({
         arrows: false,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 681,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     })
 
     $('.slider-prev').on('click', function(event) {
