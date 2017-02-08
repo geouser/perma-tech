@@ -86,6 +86,16 @@ jQuery(document).ready(function($) {
     });
 
 
+    /*---------------------------
+                                  Mobile filters
+    ---------------------------*/
+    $('.filters-mobile-menu').on('change', function(event) {
+        event.preventDefault();
+        var href = $(this).val();
+        window.location.href = href;
+    });
+
+
 
     /*---------------------------
                                   Magnific popup
