@@ -1,6 +1,7 @@
 .offer {
     height: 600px;
     padding-top: 35px;
+    position: relative;
     @include flex($direction: column, $alignI: center, $justify: center);
     background-position: 50% 50%;
     -webkit-background-size: cover;
@@ -75,6 +76,8 @@
             }
             h1 {
                 color: $blued;
+                -webkit-text-shadow: none !important;
+                        text-shadow: none !important;
             }
             &:after {
                 content: "";
