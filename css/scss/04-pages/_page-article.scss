@@ -301,16 +301,6 @@
     }
     .slide {
         padding: 0 15px;
-
-        @media (max-width: 680px) {
-            padding: 0;
-
-            .news {
-                width: 290px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
     }
     .news {
         width: 100%;

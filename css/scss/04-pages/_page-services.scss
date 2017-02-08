@@ -1,11 +1,19 @@
 .services-section {
     overflow: hidden;
+
+    @media (max-width: 1200px) {
+        padding-top: 50px;
+    }
 }
 .service {
     padding: 170px 0;
     background-repeat: no-repeat;
     text-align: left;
     position: relative;
+
+    @media (max-width: 1200px) {
+        padding: 50px 0;
+    }
 
     &-image {
         position: absolute;
@@ -16,6 +24,23 @@
         transform: translateY(-50%);
         right: -200px;
         z-index: 0;
+
+        @media (max-width: 1200px) {
+            width: 50%;
+            right: 0;
+        }
+
+        @media (max-width: 767px) {
+            width: auto;
+            opacity: 0.25;
+            right: auto;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 430px;
+        }
     }
 
     &:nth-child(2n+1) {
@@ -25,6 +50,10 @@
         .service-image {
             left: 0;
             right: auto;
+
+            @media (max-width: 767px) {
+                left: 50%;
+            }
         }
     }
 
@@ -36,9 +65,21 @@
         z-index: 1;
         line-height: 30px;
 
+        @media (max-width: 991px) {
+            line-height: normal;
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        p {
+            line-height: inherit;
+        }
+
         ul {
             list-style: none;
-            line-height: 30px;
+            line-height: inherit;
         }
 
         h2 {

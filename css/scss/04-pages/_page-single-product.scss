@@ -11,8 +11,11 @@
     }
 
     &__image {
-        width: 100%;
-        
+        @media (max-width: 767px) {
+            width: 320px;
+            margin: 0 auto 40px;
+        }
+
         .image {
             width: 100%;
             position: relative;
@@ -47,6 +50,10 @@
     &__description {
         text-align: left;
 
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
         .product-title {
             font-size: 32px;
             font-family: $r;
@@ -54,6 +61,11 @@
             line-height: 35px;
             letter-spacing: 0.025em;
             margin-bottom: 28px;
+
+            @media (max-width: 991px) {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
         }
 
         .content {
@@ -61,8 +73,12 @@
             font-size: 15px;
             line-height: 25px;
 
+            @media (max-width: 991px) {
+                line-height: normal;
+            }
+
             p {
-                line-height: 25px;
+                line-height: inherit;
             }
         }
     }
@@ -82,6 +98,11 @@
             line-height: 25px;
             margin-top: 15px;
 
+            @media (max-width: 767px) {
+                line-height: normal;
+                font-size: 13px;
+            }
+
             td {
                 padding: 15px 10px 15px 0;
                 border-top: 1px solid #E2E3E4;
@@ -99,6 +120,10 @@
                     line-height: normal;
                     display: block;
                     padding-top: 15px;
+
+                    @media (max-width: 767px) {
+                        font-size: 11px;
+                    }
                 }
             }
         }

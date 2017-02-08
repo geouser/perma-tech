@@ -10,4 +10,22 @@
     & + .navigation-controls {
         margin-top: 70px;
     }
+
+    @media (max-width: 991px) {
+        .col-4 {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .col-4 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .news {
+            width: 100%;
+            display: inline-block;
+        }
+    }
 }
