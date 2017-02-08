@@ -1,0 +1,107 @@
+.single-product {
+    padding: 45px 0;
+
+    .label {
+        color: $green;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        display: block;
+        text-align: left;
+    }
+
+    &__image {
+        width: 100%;
+        
+        .image {
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #E2E3E4;
+
+            &:after {
+                content: '';
+                width: 100%;
+                display: block;
+                padding-top: 100%;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                position: absolute;
+                max-width: 95%;
+                max-height: 95%;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+
+    &__description {
+        text-align: left;
+
+        .product-title {
+            font-size: 32px;
+            font-family: $r;
+            font-weight: 500;
+            line-height: 35px;
+            letter-spacing: 0.025em;
+            margin-bottom: 28px;
+        }
+
+        .content {
+            padding: 5px 0 20px;
+            font-size: 15px;
+            line-height: 25px;
+
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+
+
+    &__specification {
+        text-align: left;
+        margin-top: 40px;
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            font-size: 15px;
+            color: #7e7f80;
+            line-height: 25px;
+            margin-top: 15px;
+
+            td {
+                padding: 15px 10px 15px 0;
+                border-top: 1px solid #E2E3E4;
+                border-bottom: 1px solid #E2E3E4;
+                vertical-align: top;
+
+                &:first-child {
+                    font-weight: 600;
+                    color: $text;
+                    width: 33.33%;
+                }
+
+                .tip {
+                    font-size: 13px;
+                    line-height: normal;
+                    display: block;
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+
+}
