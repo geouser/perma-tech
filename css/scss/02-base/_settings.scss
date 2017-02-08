@@ -11,6 +11,9 @@ body {
     font-family: $os;
     color: $text;
     font-size: 16px;
+    @media (max-width: 600px) {
+        font-size: 14px;
+    }
 }
 p {
     line-height: 30px;
@@ -22,11 +25,37 @@ p {
     &--dark {
         color: $blued;
     }
+    @media (max-width: 1350px) {
+        font-size: 50px;
+        text-shadow: 0 0 10px rgba(0,0,0,.8);
+    }
+    @media (max-width: 800px) {
+        font-size: 40px;
+    }
+    @media (max-width: 600px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 28px;
+    }
 }
 .section-title {
     font: 700 56px $r;
     margin-bottom: 45px;
     text-align: left;
+    @media (max-width: 1350px) {
+        font-size: 48px;
+    }
+    @media (max-width: 800px) {
+        font-size: 36px;
+    }
+    @media (max-width: 600px) {
+        font-size: 28px;
+    }
+    @media (max-width: 360px) {
+        font-size: 26px;
+    }
 }
 .intro-text {
     margin: 0 auto 70px;

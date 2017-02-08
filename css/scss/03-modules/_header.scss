@@ -3,15 +3,43 @@
     @include position(fixed, 0, 0, auto, 0);
     @include transition(all, .2s);
     z-index: 100;
+    @include m1000 {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        background-color: #FFF !important;
+        overflow-y: scroll;
+        -webkit-transition: transform .4s ease-out;
+           -moz-transition: transform .4s ease-out;
+            -ms-transition: transform .4s ease-out;
+             -o-transition: transform .4s ease-out;
+                transition: transform .4s ease-out;
+        -webkit-transform: translateY(-100%);
+           -moz-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+             -o-transform: translateY(-100%);
+                transform: translateY(-100%);
+        &.active {
+            -webkit-transform: translateY(0%);
+               -moz-transform: translateY(0%);
+                -ms-transform: translateY(0%);
+                 -o-transform: translateY(0%);
+                    transform: translateY(0%);
+        }
+    }
     .wrapper {
         @include flex();
         padding-top: 8px;
         position: relative;
+        @include m1000 {
+            display: block;
+        }
     }
     @media (min-width: 1000px) {
         &.hasScrolled {
             box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
             background-color: #FFF;
+            padding-bottom: 4px;
         }
         &.hasScrolled:not(.mainHeader--dark) {
             background-color: rgba(0,22,38,.8);
@@ -41,6 +69,10 @@
         right: -180px;
         @media (max-width: 1570px) {
             position: static;
+        }
+        @include m1000 {
+            display: block;
+            margin: 20px auto;
         }
         a {
             display: inline-block;
@@ -78,6 +110,12 @@
             cursor: pointer;
             -webkit-border-radius: 20px;
                     border-radius: 20px;
+            @media (max-width: 1100px) {
+                margin-top: 8px;
+            }
+            @include m1000 {
+                margin-top: 20px;
+            }
             @include transition(all, .2s);
             &:hover {
                 background-color: $grey;
@@ -139,20 +177,29 @@
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .mainNav {
-    ul {
+    > ul {
         list-style-type: none;
-        li {
+        > li {
             display: inline-block;
             vertical-align: middle;
             position: relative;
-            a {
+            margin: 0 40px 0 0;
+            @media (max-width: 1500px) {
+                margin: 0 0 0 30px;
+            }
+            @include m1000 {
+                display: block;
+                margin: 0 auto 10px;
+                text-align: center;
+            }
+            > a {
                 display: inline-block;
                 font: 13px/32px $os;
                 color: #FFF;
                 text-transform: uppercase;
                 text-shadow: 0px 1px 0px rgba(0, 22, 38, 0.3);
                 position: relative;
-                margin: 0 40px 0 0;
+                margin: 0;
                 &:after {
                     content: "";
                     display: block;
@@ -167,21 +214,85 @@
                     @include transition(all, .2s);
                     box-shadow: 0px 1px 0px 0px rgba(0, 22, 38, 0.2);
                 }
-                &:hover:after,
-                &:active:after {
-                    max-width: 100%;
-                }
-                @media (max-width: 1500px) {
-                    margin: 0 0 0 30px;
+                @media (max-width: 1100px) {
+                    font-size: 12px;
                 }
             }
             .sub {
                 position: absolute;
+                background-color: #FFF;
+                padding: 15px;
+                width: 140px;
+                left: 50%;
+                top: 130%;
                 opacity: 0;
                 visibility: hidden;
+                @include transition(all, .4s);
+                box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+                -webkit-transform: translateX(-50%);
+                   -moz-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                     -o-transform: translateX(-50%);
+                        transform: translateX(-50%);
+                @media (max-width: 1000px) {
+                    display: none;
+                    position: static;
+                    box-shadow: none;
+                    margin: 10px auto 15px;
+                    opacity: 1;
+                    visibility: visible;
+                    width: 100%;
+                    padding: 0;
+                    -webkit-transform: none;
+                       -moz-transform: none;
+                        -ms-transform: none;
+                         -o-transform: none;
+                            transform: none;
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: -20px;
+                    height: 20px;
+                    width: 100%;
+                    left: 0;
+                }
+                li {
+                    display: block;
+                    text-align: center;
+                    a {
+                        color: $blued;
+                        font: 12px/30px $os;
+                        text-align: center;
+                        text-transform: uppercase;
+                        @media (max-width: 1100px) {
+                            font-size: 11px;
+                        }
+                    }
+                }
             }
-            &:last-of-type a {
+            &:last-of-type {
                 margin-right: 0;
+            }
+            &.active {
+                > a:after {
+                    max-width: 100%;
+                }
+            }
+            @media (min-width: 1001px) {
+                &:hover {
+                    .sub {
+                        top: 115%;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            &:hover {
+                > a:after {
+                    max-width: 100%;
+                }
             }
         }
     }
@@ -199,6 +310,20 @@
                 }
             }
         }
+    }
+}
+
+.logo {
+    @media (max-width: 1100px) {
+        width: 160px;
+    }
+    @include m1000 {
+        display: block;
+        margin: 0 auto 40px;
+    }
+    img {
+        display: block;
+        max-width: 100%;
     }
 }
 
@@ -242,13 +367,13 @@
 
 .menu-button     {    
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     @include position(fixed, 15px, 15px, auto, auto);
     margin: auto; 
     cursor: pointer;
     z-index: 100;
-    background-color: salmon;
+    background-color: $green;
     border: none;
     -webkit-border-radius: 4px;
             border-radius: 4px;
@@ -256,16 +381,16 @@
         display: block;
         @include position(absolute, auto, 0, auto, 0);
         width: 60%;
-        height: 5px;
+        height: 3px;
         background-color: #fff;
         -webkit-border-radius: 1px;
         border-radius: 1px;
         @include transition(all, .4s);
     }
 
-    .top_line              {   top: 12px;  margin: auto;}
-    .middle_line           {   top: 22px;  margin: auto;}
-    .bottom_line           {   bottom: 12px; margin: auto;}
+    .top_line              {   top: 10px;  margin: auto;}
+    .middle_line           {   top: 18px;  margin: auto;}
+    .bottom_line           {   bottom: 10px; margin: auto;}
 
     &.active               {   -webkit-border-radius: 6px; border-radius: 6px;}
     &.active .top_line     {   @include transform(rotate(45deg)); top: 45%;}
@@ -273,7 +398,7 @@
     &.active .middle_line  {   width: 0; left: 50%;}
 
         /*.................media.............*/
-        @include m800 {
+        @include m1000 {
             display: block;
         }
         /*..............end media.............*/

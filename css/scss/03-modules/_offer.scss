@@ -6,6 +6,9 @@
     -webkit-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
+    @media (max-width: 1000px) {
+        padding-top: 0;
+    }
     &--tall {
         height: 100%;
         min-height: 600px;
@@ -21,10 +24,21 @@
         font: 20px $r;
         font-weight: 500;
         margin-top: 15px;
+        @media (max-width: 1350px) {
+            font-size: 18px;
+            text-shadow: 0 0 10px rgba(0,0,0,.8);
+        }
+        @media (max-width: 600px) {
+            font-size: 16px;
+        }
+        @media (max-width: 360px) {
+        }
     }
     &__slider {
         height: 100%;
         width: 100%;
+        max-height: 1080px;
+        min-height: 500px;
         margin: 0;
         .slick-list,
         .slick-track {
@@ -37,6 +51,10 @@
             .wrapper {
                 height: 100%;
                 @include flex($direction: column, $alignI: flex-start, $justify: center);
+                @media (max-width: 1110px) {
+                    -webkit-align-items: center;
+                            align-items: center;
+                }
             }
             &__info {
                 width: 530px;
@@ -44,6 +62,15 @@
                 text-align: left;
                 .button {
                     margin-top: 30px;
+                }
+                @media (max-width: 1350px) {
+                    text-align: center;
+                    margin-left: 50px;
+                }
+                @media (max-width: 1110px) {
+                    margin: 0 auto;
+                    padding: 30px 20px 20px;
+                    background-color: rgba(255,255,255,.4);
                 }
             }
             h1 {
@@ -96,6 +123,17 @@
     @media (max-width: 1500px) {
         left: 10px;
     }
+    @media (max-width: 1350px) {
+        bottom: 40px;
+        left: 40%;
+        top: auto;
+    }
+    @media (max-width: 550px) {
+        left: 35%;
+    }
+    @media (max-width: 370px) {
+        left: 32%;
+    }
 }
 .slick-next {
     background-image: url("../images/next.svg") !important;
@@ -106,5 +144,16 @@
             background-size: 100% 100%!important;
     @media (max-width: 1500px) {
         right: 10px;
+    }
+    @media (max-width: 1350px) {
+        bottom: 40px;
+        right: 40%;
+        top: auto;
+    }
+    @media (max-width: 550px) {
+        right: 35%;
+    }
+    @media (max-width: 370px) {
+        right: 32%;
     }
 }
