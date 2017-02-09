@@ -18,6 +18,9 @@
     &--left {
         .wrapper {
             text-align: left;
+            @media (max-width: 1350px) {
+                text-align: center;
+            }
         }
     }
     p {

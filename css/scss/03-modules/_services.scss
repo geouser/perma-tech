@@ -260,6 +260,12 @@
         -webkit-background-size: cover;
              -o-background-size: cover;
                 background-size: cover;
+        @media (max-width: 1000px) {
+            width: 50%;
+        }
+        @media (max-width: 550px) {
+            width: 100%;
+        }
         .title {
             display: block;
             margin: 0 auto 22px;
