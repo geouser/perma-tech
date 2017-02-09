@@ -2,6 +2,14 @@
     @include flex($alignI: flex-start);
     &__service {
         width: 32%;
+        @media (max-width: 760px) {
+            width: 48%;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 600px) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
         i {
             width: 100%;
             display: block;
@@ -10,6 +18,9 @@
             -webkit-background-size: cover;
                  -o-background-size: cover;
                     background-size: cover;
+            @media (max-width: 850px) {
+                margin-bottom: 20px;
+            }
             &:after {
                 content: "";
                 display: block;
@@ -20,11 +31,19 @@
             color: $blue;
             font: 500 20px/30px $r;
             margin-bottom: 20px;
+            @media (max-width: 850px) {
+                font-size: 18px;
+                line-height: 26px;
+            }
         }
         p {
             margin-bottom: 10px;
             font-size: 15px;
             line-height: 25px;
+            @media (max-width: 850px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
         }
         ul {
             list-style-type: none;
@@ -32,6 +51,11 @@
                 font-size: 15px;
                 line-height: 25px;
                 margin-bottom: 10px;
+                @media (max-width: 850px) {
+                    font-size: 14px;
+                    line-height: 22px;
+                    margin-bottom: 8px;
+                }
                 &:before {
                     content: "";
                     width: 14px;
@@ -60,31 +84,73 @@
     -webkit-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
+    @media (max-width: 600px) {
+        width: 100%;
+        margin-bottom: 20px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
     &__info {
         min-height: 200px;
+        @media (max-width: 1000px) {
+            min-height: 180px;
+        }
+        @media (max-width: 800px) {
+            min-height: 150px;
+        }
+        @media (max-width: 600px) {
+            min-height: 0;
+        }
     }
     p {
         color: #FFF;
         font: 700 56px $r;
-        min-height: 110px;
         text-shadow: 0 0 10px rgba(0,0,0,.2);
+        @media (max-width: 1350px) {
+            font-size: 48px;
+        }
+        @media (max-width: 800px) {
+            font-size: 36px;
+        }
     }
     .button {
         margin-top: 25px;
+        @media (max-width: 800px) {
+            margin-top: 15px;
+        }
     }
     &:after {
         content: "";
         display: block;
         padding-top: 29%;
+        @media (max-width: 800px) {
+            padding-top: 20%;
+        }
+        @media (max-width: 600px) {
+            padding-top: 30%;
+        }
     }
 }
 
 
 .news-list {
     @include flex($alignI: flex-start);
+    @media (max-width: 760px) {
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+    }
 }
 .news {
     width: 32%;
+    @media (max-width: 760px) {
+        width: 45%;
+        margin-bottom: 5%;
+    }
+    @media (max-width: 550px) {
+        width: 100%;
+        margin-bottom: 7%;
+    }
     i {
         display: block;
         background-position: 50% 50%;
@@ -104,14 +170,27 @@
         padding: 20px;
         text-align: left;
         box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+        @media (max-width: 1000px) {
+            width: 88%;
+            padding: 15px;
+        }
         p {
             font: 15px/24px $os;
+            @media (max-width: 1000px) {
+                font-size: 14px;
+                line-height: 20px;
+            }
         }
         .title {
             display: block;
             color: $blue;
             font: 500 20px/30px $r;
             margin-bottom: 16px;
+            @media (max-width: 1000px) {
+                margin-bottom: 10px;
+                font-size: 18px;
+                line-height: 26px;
+            }
         }
         .date {
             margin-bottom: 14px;
@@ -119,6 +198,9 @@
             color: $grey;
             font-family: $r;
             font-weight: 500;
+            @media (max-width: 1000px) {
+                margin-bottom: 10px;
+            }
             b {
                 font-weight: 700;
             }
@@ -160,6 +242,9 @@
     .button {
         display: block;
         margin: 25px auto 0;
+        @media (max-width: 1000px) {
+            margin-top: 20px;
+        }
     }
 }
 
